@@ -1,0 +1,155 @@
+export const CV = {
+  name: "Christopher Jordan Timothy Payangan",
+  shortName: "Christopher Jordan",
+  initials: "CJ",
+  title: "Hybrid QA Engineer",
+  subtitle: "Open Banking Platform",
+  location: "Jakarta, Indonesia",
+  phone: "+62 851-6145-8664",
+  email: "christopherjordantp@gmail.com",
+  languages: ["Bahasa Indonesia", "English"],
+  cvUrl:
+    "https://customer-assets.emergentagent.com/job_1958d9cc-4ff8-4211-8fcd-caf91bb4c3ae/artifacts/8s5i8lua_Christopher_Jordan_QA_Engineer.pdf",
+  summary:
+    "Detail-oriented QA Engineer with over 4 years of experience specializing in fintech and open banking platforms. Expert in manual, API, and UI/Mobile automation using Selenium, Appium, and RestAssured. Leveraging a strong foundational background in Full Stack Development (Java Spring, Angular) to perform deep-dive debugging and Gray Box testing. Proven track record of improving test coverage through BDD methodologies and AI-assisted testing initiatives.",
+  stats: [
+    { value: "4+", label: "Years Experience" },
+    { value: "545+", label: "Test Scenarios" },
+    { value: "250+", label: "Bug Reports" },
+    { value: "70+", label: "Reusable Methods" },
+  ],
+  skillGroups: [
+    {
+      title: "Test Automation & Frameworks",
+      items: [
+        "Selenium",
+        "Appium",
+        "WebDriverManager",
+        "RestAssured",
+        "Postman",
+        "JMeter",
+        "BDD (Cucumber/Gherkin)",
+        "TestNG",
+        "Allure",
+      ],
+    },
+    {
+      title: "QA Methodologies",
+      items: [
+        "Black Box Testing",
+        "White Box Testing",
+        "Gray Box Testing",
+        "Regression Testing",
+        "Functional Testing",
+        "Unit Testing",
+        "System Debugging",
+        "Test Case Design",
+        "Requirement Analysis",
+      ],
+    },
+    {
+      title: "Technical Foundations",
+      items: [
+        "Java",
+        "Groovy",
+        "HTML",
+        "CSS",
+        "SQL",
+        "MySQL",
+        "DBeaver",
+        "Kibana",
+        "Angular",
+        "Java Spring",
+      ],
+    },
+    {
+      title: "Workflow & Tools",
+      items: [
+        "Jira",
+        "Confluence",
+        "Zephyr Scale",
+        "Figma",
+        "Git",
+        "Fork",
+        "IntelliJ",
+        "VS Code",
+        "Agile Practices",
+      ],
+    },
+  ],
+  experience: [
+    {
+      role: "Hybrid QA Engineer – Open Banking Platform",
+      company: "PT Digital Daya Teknologi",
+      period: "2024 - Present",
+      points: [
+        "Spearheaded the adoption of BDD/Gherkin methodologies across cross-functional QA members from multiple projects, standardizing test documentation and improving collaboration within the Open Banking Platform.",
+        "Led API and UI automation initiatives by mentoring QA members in transitioning manual test cases into Cucumber Step Definitions, directly increasing automation coverage and enhancing the technical proficiency of the department.",
+        "Built and executed UI and API automation scripts using Selenium, Appium, Groovy, and RestAssured, strengthening end-to-end test coverage and reducing regression cycles.",
+        "Architected 70+ reusable test methods (surpassing initial framework goals) and contributed 82 automation-aligned test cases, significantly reducing duplicate scripting effort and enhancing automation framework maintainability.",
+        "Operationalized AI-assisted testing initiatives by leveraging internal SDET tools to generate Gherkin scenarios and optimize Cucumber definitions, increasing script generation speed and scalability.",
+        "Executed 545+ comprehensive test scenarios across Open Banking and EKYC projects using black, white, and gray-box techniques, maintaining a 100% completion rate for all assigned delivery tickets.",
+        "Improved functional coverage by identifying missing API edge cases and adding structured test scenarios that strengthened overall platform reliability and system stability.",
+      ],
+    },
+    {
+      role: "Quality Assurance Engineer – Open Banking Platform",
+      company: "PT Digital Daya Teknologi",
+      period: "2022 - Present",
+      points: [
+        "Resolved 152+ task tickets in the first two years, improving operational efficiency and accelerating development throughput.",
+        "Created and documented 250+ detailed bug reports, enhancing defect tracking accuracy and cross-team resolution speed.",
+        "Executed and maintained 50+ test scenarios across the dashboard and API components, reducing production bugs by 20%.",
+        "Applied black box, white box, and gray box testing techniques to validate API behavior, backend workflows, and edge cases against system design and technical specifications.",
+        "Led the creation, review, and optimization of BDD test cases, improving test quality and automation readiness for Open Banking Platform QA's.",
+        "Collaborated with PMs, POs, Developers, and QA teams to ensure 100% test coverage, to improve defect detection speed.",
+        "Conducted in-depth manual and automated testing with 95% accuracy in identifying critical issues, supported by high-quality test documentation.",
+        "Leveraged Jira and Confluence to streamline workflows, increasing test cycle efficiency and enabling timely, high-quality releases.",
+      ],
+    },
+    {
+      role: "Full Stack Engineer",
+      company: "KEB Hana Bank Indonesia",
+      period: "2020 - 2022",
+      points: [
+        "Built an E-Channel Management Information System (MIS) and a Pipeline Management System using Angular and Java Spring to facilitate bank-wide data reporting.",
+        "Delivered BI Fast payment system modules in strict alignment with Bank Indonesia technical requirements.",
+        "Directed debugging and performance enhancement efforts for core frontend and backend modules to ensure system stability.",
+      ],
+    },
+  ],
+  education: [
+    {
+      title: "Bachelor of Information Systems",
+      org: "Binus University",
+      period: "2014 - 2019",
+      type: "Education",
+    },
+    {
+      title: "Microservices with Java Spring Boot & Spring Cloud",
+      org: "Udemy",
+      period: "2022",
+      type: "Course",
+    },
+    {
+      title: "SQL (Basic) Certificate",
+      org: "HackerRank",
+      period: "2026",
+      type: "Certification",
+    },
+    {
+      title: "Credit Scoring & Review Intern",
+      org: "KEB Hana Bank Indonesia",
+      period: "2019 - 2020",
+      type: "Internship",
+    },
+  ],
+  heroImages: {
+    minimal:
+      "https://images.unsplash.com/photo-1585854467604-cf2080ccef31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG1pbmltYWwlMjB3aGl0ZSUyMGJsdWV8ZW58MHx8fHwxNzgxMDI1ODI5fDA&ixlib=rb-4.1.0&q=85",
+    dark:
+      "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjB0ZWNobm9sb2d5JTIwYmx1ZXxlbnwwfHx8fDE3ODEwMjU4Mjl8MA&ixlib=rb-4.1.0&q=85",
+    corporate:
+      "https://images.pexels.com/photos/19513471/pexels-photo-19513471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+};
