@@ -21,15 +21,25 @@ export const Contact = () => {
       toast.error("Please fill in all fields.");
       return;
     }
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim());
+    if (!emailOk) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
     setSubmitting(true);
     try {
       await axios.post(`${API}/contact`, form);
       toast.success("Message sent! I'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
-      const detail =
-        err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(typeof detail === "string" ? detail : "Failed to send message.");
+      const detail = err?.response?.data?.detail;
+      let msg = "Something went wrong. Please try again.";
+      if (typeof detail === "string") {
+        msg = detail;
+      } else if (Array.isArray(detail) && detail[0]?.msg) {
+        msg = detail[0].msg;
+      }
+      toast.error(msg);
     } finally {
       setSubmitting(false);
     }
