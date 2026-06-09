@@ -1,0 +1,162 @@
+{
+  "theme_archetype": {
+    "primary": "Archetype 4 (Swiss & High-Contrast)",
+    "description": "Clean, authoritative, and precise to reflect QA engineering, strictly adhering to the Blue, Black, and White palette.",
+    "themes": [
+      {
+        "name": "Modern Minimal",
+        "type": "light",
+        "colors": {
+          "background": "#FFFFFF",
+          "foreground": "#0A0A0A",
+          "primary": "#2563EB",
+          "secondary": "#F1F5F9",
+          "accent": "#DBEAFE",
+          "border": "#E2E8F0",
+          "surface": "#FFFFFF",
+          "muted": "#64748B"
+        },
+        "typography": {
+          "headings": "font-display font-medium tracking-tight",
+          "body": "font-sans leading-relaxed"
+        },
+        "surface_strategy": "Flat solid surfaces with pure white background, generous padding, and 1px very light border. No shadows. Sharp edges (rounded-none or rounded-sm)."
+      },
+      {
+        "name": "Bold & Dark",
+        "type": "dark",
+        "colors": {
+          "background": "#050505",
+          "foreground": "#FAFAFA",
+          "primary": "#3B82F6",
+          "secondary": "#1E293B",
+          "accent": "#1E3A8A",
+          "border": "#1F2937",
+          "surface": "#0F172A",
+          "muted": "#94A3B8"
+        },
+        "typography": {
+          "headings": "font-mono font-black tracking-tighter uppercase",
+          "body": "font-sans leading-relaxed"
+        },
+        "surface_strategy": "Retro-Futurism/Terminal look. Pure black base, glowing blue accents, visible grid borders (border-collapse style). High contrast."
+      },
+      {
+        "name": "Professional Corporate",
+        "type": "light",
+        "colors": {
+          "background": "#F8FAFC",
+          "foreground": "#0F172A",
+          "primary": "#1D4ED8",
+          "secondary": "#E2E8F0",
+          "accent": "#BFDBFE",
+          "border": "#CBD5E1",
+          "surface": "#FFFFFF",
+          "muted": "#475569"
+        },
+        "typography": {
+          "headings": "font-serif font-bold tracking-tight",
+          "body": "font-sans leading-loose"
+        },
+        "surface_strategy": "Neumorphic tactile variant or Glassmorphism. Soft shadows (shadow-sm), subtle border radii (rounded-lg), high-end classic feel."
+      }
+    ]
+  },
+  "typography": {
+    "font_families": {
+      "sans": "'IBM Plex Sans', sans-serif",
+      "mono": "'JetBrains Mono', monospace",
+      "serif": "'Playfair Display', serif",
+      "display": "'Cabinet Grotesk', sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight",
+      "h3": "text-xl sm:text-2xl tracking-tight",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body": "text-base",
+      "small": "text-sm text-muted uppercase tracking-[0.2em]"
+    }
+  },
+  "layout_spacing": {
+    "philosophy": "Generous Spacing: p-6, p-8, p-12. Containers must have internal padding.",
+    "hero_grid": "MODE A: TETRIS GRID. Asymmetry, col-span-8 for main intro, col-span-4 for quick stats/CTA.",
+    "skills_grid": "MODE B: CONTROL ROOM. Dense, col-span-1 summary blocks, strict gaps (gap-4 or gap-6).",
+    "section_padding": "py-20 md:py-32",
+    "container": "container mx-auto px-6 md:px-12 max-w-7xl"
+  },
+  "components": {
+    "theme_switcher": {
+      "strategy": "Interactive header element. Uses context or standard React state to swap a `data-theme` attribute on the root html element, applying CSS variables.",
+      "visuals": "Icon-based toggle (Sun/Moon/Briefcase) or a segmented control switch using Shadcn Tabs."
+    },
+    "hero": {
+      "strategy": "High impact introduction. Name in massive display typography. Blue-tinted abstract overlay.",
+      "cta": "Primary 'Download CV (PDF)' in solid brand blue. Secondary 'Contact' outlined."
+    },
+    "timeline_experience": {
+      "strategy": "Vertical line on left side (border-l-2 border-border/40). Items connected with absolute positioned dots. Grouped responsibilities.",
+      "typography": "Role title prominent, company name subdued. Date in monospace."
+    },
+    "stats_metrics": {
+      "strategy": "Massive typography (text-5xl+) for numbers '545+', '250+', '70+'. Monospace. Small overline labels."
+    },
+    "contact_form": {
+      "strategy": "Shadcn Form elements. Custom styling based on active theme (e.g., solid inputs for minimal, glowing focus rings for dark, subtle inset shadows for corporate).",
+      "fields": ["Name", "Email", "Message", "Submit Button"]
+    }
+  },
+  "motion_interactions": {
+    "hover_states": "hover:-translate-y-1 hover:shadow-lg hover:text-primary transition-all duration-300 ease-out",
+    "entrance": "Framer Motion staggered children. `initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{staggerChildren: 0.1}}`",
+    "buttons": "Active state scales down (active:scale-95). Glow effect on dark mode."
+  },
+  "images": {
+    "hero_backgrounds": [
+      {
+        "theme": "Modern Minimal",
+        "url": "https://images.unsplash.com/photo-1585854467604-cf2080ccef31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG1pbmltYWwlMjB3aGl0ZSUyMGJsdWV8ZW58MHx8fHwxNzgxMDI1ODI5fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Wavy blue and white abstract architecture. Use with bg-white/60 backdrop-blur overlay."
+      },
+      {
+        "theme": "Bold & Dark",
+        "url": "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjB0ZWNobm9sb2d5JTIwYmx1ZXxlbnwwfHx8fDE3ODEwMjU4Mjl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Blue and black digital technology texture. Use with bg-black/50 overlay."
+      },
+      {
+        "theme": "Professional Corporate",
+        "url": "https://images.pexels.com/photos/19513471/pexels-photo-19513471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Clean and modern workspace. Use with bg-slate-50/80 backdrop-blur-md overlay."
+      }
+    ],
+    "avatar": {
+      "url": "https://images.unsplash.com/photo-1780035206571-a4fbb3e08a22?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjB0ZWNofGVufDB8fHx8MTc4MTAyNTgyOXww&ixlib=rb-4.1.0&q=85",
+      "description": "Professional sitting at tech desk. Use as a masked silhouette or professional headshot stand-in."
+    }
+  },
+  "testing": {
+    "attributes": [
+      "data-testid='hero-download-cv-btn'",
+      "data-testid='hero-contact-btn'",
+      "data-testid='theme-switcher-minimal'",
+      "data-testid='theme-switcher-dark'",
+      "data-testid='theme-switcher-corporate'",
+      "data-testid='contact-form-name'",
+      "data-testid='contact-form-email'",
+      "data-testid='contact-form-message'",
+      "data-testid='contact-form-submit'",
+      "data-testid='skills-section'",
+      "data-testid='experience-timeline'"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a single-page React portfolio using Tailwind CSS.",
+    "Implement the 3 distinct themes (Minimal, Dark, Corporate) via a robust Theme Switcher. Use CSS variables to dynamically change colors across the page when switching themes.",
+    "Strictly follow the color palette constraint (Blue, Black, White). Variations should only be shades of these.",
+    "Use Phosphor Icons or Lucide-React for tech stack & UI adornments.",
+    "Implement Shadcn UI for the Contact Form, Buttons, and Theme dropdown.",
+    "Load standard Google Fonts for the requested typography (IBM Plex Sans, JetBrains Mono, Playfair Display, Cabinet Grotesk/Outfit).",
+    "Add 'data-testid' attributes exactly as described for all interactive and key elements.",
+    "Create dynamic hero backgrounds that swap based on the active theme, applying appropriate overlays so text contrast is never compromised."
+  ]
+}
