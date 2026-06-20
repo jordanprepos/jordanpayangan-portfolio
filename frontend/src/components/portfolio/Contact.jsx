@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "sonner";
-import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Loader2, Linkedin, Github } from "lucide-react";
 import { CV } from "../../data/cv";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -102,6 +102,29 @@ export const Contact = () => {
                   <div key={c.label}>{inner}</div>
                 );
               })}
+            </div>
+
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href={CV.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="contact-linkedin-link"
+                aria-label="LinkedIn"
+                className="flex items-center justify-center w-11 h-11 rounded-[var(--t-radius)] border border-tborder bg-tsurface text-tfg hover:border-tprimary hover:text-tprimary hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={CV.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="contact-github-link"
+                aria-label="GitHub"
+                className="flex items-center justify-center w-11 h-11 rounded-[var(--t-radius)] border border-tborder bg-tsurface text-tfg hover:border-tprimary hover:text-tprimary hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <Github className="w-5 h-5" />
+              </a>
             </div>
           </motion.div>
 
