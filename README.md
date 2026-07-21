@@ -1,134 +1,75 @@
-# Christopher Jordan — CV / Profile Landing Page
+# Christopher Jordan — QA Engineer · Portfolio
 
-A polished, single-page personal portfolio website for **Christopher Jordan Timothy Payangan**, a Hybrid QA Engineer specializing in Fintech & OpenAPI Banking. The site presents his CV in an interactive, recruiter-friendly format with **three switchable visual themes**, a **functional contact form**, and a **downloadable CV (PDF)**.
+Personal portfolio site for **Christopher Jordan Timothy Payangan**, a QA Engineer specializing in
+Fintech & OpenAPI Banking.
 
-> 🚀 This project was built with the help of [**Emergent**](https://emergent.sh) — an AI-powered full-stack app builder.
-
----
-
-## ✨ Features
-
-- **Single-page CV layout** — Hero, About, Skills, Experience timeline, Education & Certifications, Contact, and Footer.
-- **3 switchable themes** (constrained to a blue / black / white palette):
-  - 🌞 **Modern Minimal** — clean, lots of whitespace
-  - 🌙 **Bold & Dark** — dramatic, high-contrast terminal aesthetic
-  - 💼 **Professional Corporate** — polished, classic
-  - Theme preference is **persisted** in `localStorage`.
-- **Functional contact form** — submissions are stored in MongoDB via the backend API, with success/error toasts and client-side validation.
-- **Download CV (PDF)** buttons in the header, hero, and footer.
-- **LinkedIn & GitHub** quick links in the Contact section and footer.
-- **Smooth animations** with Framer Motion and responsive design across devices.
+🔗 **Live:** https://jordanprepos.github.io/jordanpayangan-portfolio/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech
 
-| Layer      | Technology |
-|------------|------------|
-| Frontend   | React 19 (CRA + CRACO), Tailwind CSS, Framer Motion, lucide-react, sonner |
-| Backend    | FastAPI (Python), Motor (async MongoDB driver), Pydantic |
-| Database   | MongoDB |
-| Tooling    | Yarn, Supervisor, Uvicorn |
+A single self-contained static page — **no build step, no backend, no dependencies to install**.
 
----
+| | |
+|---|---|
+| Markup / styling | Hand-written HTML + CSS (CSS custom properties for theming) |
+| Behaviour | Vanilla JavaScript (no framework) |
+| Contact form | [Web3Forms](https://web3forms.com) (serverless form endpoint) |
+| Hosting | GitHub Pages |
 
-## 📁 Project Structure
+## Features
+
+- Single-page layout — Hero, About, Skills, Experience, Education & Certifications, Projects, Contact.
+- **3 switchable themes** (Minimal / Dark / Corporate), persisted in `localStorage`.
+- Responsive down to mobile, with a collapsible nav.
+- Scroll-reveal animations via `IntersectionObserver` (degrades gracefully without JS support).
+- Downloadable CV (PDF) and viewable certificates — all assets self-hosted.
+
+## Structure
 
 ```
-/app
-├── backend/
-│   ├── server.py            # FastAPI app + /api/contact endpoints
-│   ├── requirements.txt
-│   └── .env                 # MONGO_URL, DB_NAME, CORS_ORIGINS
-├── frontend/
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── data/cv.js        # All CV content (single source of truth)
-│   │   ├── context/ThemeContext.jsx
-│   │   ├── pages/Portfolio.jsx
-│   │   └── components/
-│   │       ├── ui/           # shadcn/ui components
-│   │       └── portfolio/    # Header, Hero, About, Skills, Experience, Education, Contact, Footer
-│   ├── package.json
-│   └── .env                  # REACT_APP_BACKEND_URL
-└── README.md
+index.html    # the entire site: markup, styles, data and behaviour
+assets/       # CV PDF
+uploads/      # portrait, certificates, hero background images
 ```
 
----
+All content (skills, experience, education, projects) lives in plain JS arrays near the bottom of
+`index.html` — edit those to update the site.
 
-## 🔌 API Endpoints
+## Running locally
 
-All backend routes are prefixed with `/api`.
+No tooling required. Either open `index.html` directly, or serve it:
 
-| Method | Endpoint        | Description                          |
-|--------|-----------------|--------------------------------------|
-| GET    | `/api/`         | Health check                         |
-| POST   | `/api/contact`  | Submit a contact message             |
-| GET    | `/api/contact`  | List submitted messages (newest first) |
-
-**Contact payload:**
-```json
-{
-  "name": "Jane Doe",
-  "email": "jane@example.com",
-  "message": "Hello, I'd love to connect!"
-}
-```
-
----
-
-## 🚀 Getting Started (Local Development)
-
-### Prerequisites
-- Node.js + Yarn
-- Python 3.11+
-- MongoDB running locally
-
-### Environment Variables
-
-**`backend/.env`**
-```
-MONGO_URL="mongodb://localhost:27017"
-DB_NAME="test_database"
-CORS_ORIGINS="*"
-```
-
-**`frontend/.env`**
-```
-REACT_APP_BACKEND_URL=<your-backend-url>
-```
-
-### Backend
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+python3 -m http.server 8777
+# then open http://127.0.0.1:8777
 ```
 
-### Frontend
-```bash
-cd frontend
-yarn install
-yarn start
+## Contact form setup
+
+The form posts to Web3Forms. To enable it, get a free access key at
+[web3forms.com](https://web3forms.com) and replace the placeholder in `index.html`:
+
+```js
+var WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
 ```
 
-The frontend runs on port `3000` and the backend on port `8001`. The frontend talks to the backend through `REACT_APP_BACKEND_URL`.
+Until a real key is set, the form tells visitors to email directly instead.
+
+## Deploying
+
+Hosted on **GitHub Pages** from the `main` branch (root). Any push to `main` republishes the site.
 
 ---
 
-## ✏️ Updating CV Content
+## Previous full-stack version
 
-All resume content lives in a single file: **`frontend/src/data/cv.js`**.
-Edit the `CV` object (name, title, summary, stats, skillGroups, experience, education, links, `cvUrl`) and the UI updates automatically — no component changes required.
+This site was originally built as a **React + FastAPI + MongoDB** application (generated with
+[Emergent](https://emergent.sh)). That version is preserved on the
+[`react-fullstack`](https://github.com/jordanprepos/jordanpayangan-portfolio/tree/react-fullstack)
+branch — React 19 (CRA + CRACO), Tailwind, Framer Motion, shadcn/ui, plus a FastAPI backend with a
+MongoDB-backed `/api/contact` endpoint.
 
----
-
-## 🙏 Acknowledgements
-
-This project was designed and developed with the assistance of **[Emergent](https://emergent.sh)**, an agentic AI platform for building full-stack applications.
-
----
-
-## 📄 License
-
-Personal portfolio project. © Christopher Jordan Timothy Payangan.
+It was replaced on `main` by this static build so the site can be hosted for free on a CDN with no
+server, database, or build pipeline to maintain.
