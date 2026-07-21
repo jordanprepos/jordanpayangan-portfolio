@@ -735,8 +735,11 @@
 
   // ---- Contact form (Web3Forms — no backend required) ----
   // Get a free access key at https://web3forms.com (enter your email, it's mailed to you)
-  // and replace the placeholder below. Until then the form reports that it isn't configured.
+  // and replace the placeholder below. Until then the form falls back to opening the
+  // visitor's mail client with the message prefilled, so it always leads somewhere.
   var WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+  var CONTACT_EMAIL = "christopherjordantp@gmail.com";
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   var sentTimer = null;
   function showMsg(text, isError) {
@@ -759,8 +762,21 @@
       showMsg("Please fill in your name, email and message.", true);
       return;
     }
+    if (!EMAIL_RE.test(email)) {
+      showMsg("That email address doesn't look right — I won't be able to reply.", true);
+      $("cv-email").focus();
+      return;
+    }
+
+    var subject = "Portfolio contact from " + name;
+
+    // No access key configured — hand off to the visitor's mail client instead of dead-ending.
     if (WEB3FORMS_KEY.indexOf("REPLACE_WITH_") === 0) {
-      showMsg("Contact form isn't configured yet — please email christopherjordantp@gmail.com directly.", true);
+      var body = "From: " + name + " <" + email + ">\n\n" + message;
+      window.location.href = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      showMsg("Opening your email app — if nothing happens, write to " + CONTACT_EMAIL + " directly.", false);
       return;
     }
 
@@ -774,7 +790,7 @@
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: "Portfolio contact from " + name,
+        subject: subject,
         from_name: "Portfolio Website",
         name: name,
         email: email,
@@ -787,11 +803,11 @@
           showMsg("Message sent! I'll get back to you soon.", false);
           $("contactForm").reset();
         } else {
-          showMsg("Something went wrong. Please email christopherjordantp@gmail.com instead.", true);
+          showMsg("Something went wrong. Please email " + CONTACT_EMAIL + " instead.", true);
         }
       })
       .catch(function () {
-        showMsg("Network error. Please email christopherjordantp@gmail.com instead.", true);
+        showMsg("Network error. Please email " + CONTACT_EMAIL + " instead.", true);
       })
       .then(function () {
         btn.disabled = false;
