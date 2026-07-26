@@ -11,3 +11,10 @@
 
 # Node (only relevant on the react-fullstack branch)
 node_modules/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
