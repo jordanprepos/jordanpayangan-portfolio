@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A personal portfolio site for Christopher Jordan Timothy Payangan (QA Engineer, Fintech & OpenAPI
+A personal portfolio site for Christopher Jordan Timothy Payangan (QA Engineer, Fintech & Open
 Banking). It is a **single self-contained static HTML page** — no build step, no backend, no
 package.json, no dependencies to install. Hosted on GitHub Pages from `main` (root); any push to
 `main` republishes the live site at https://jordanprepos.github.io/jordanpayangan-portfolio/.
