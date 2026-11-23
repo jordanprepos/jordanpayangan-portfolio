@@ -1,7 +1,7 @@
 # Christopher Jordan — QA Engineer · Portfolio
 
 Personal portfolio site for **Christopher Jordan Timothy Payangan**, a QA Engineer specializing in
-Fintech & OpenAPI Banking.
+Fintech & Open Banking.
 
 🔗 **Live:** https://jordanprepos.github.io/jordanpayangan-portfolio/
 
